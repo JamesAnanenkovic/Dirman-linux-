@@ -37,7 +37,7 @@ A fast, keyboard-driven file manager with a beautiful TUI (Terminal User Interfa
 - **Real-time preview** - See changes instantly in settings menu
 
 ## 🎮 Controls
-
+```
 Navigation:
 ↑/↓ or j/k     Move selection
 Enter          Open directory
@@ -56,11 +56,11 @@ System:
 ESC            Open settings menu
 Arrow Keys     Navigate menus
 Enter/Space    Select option
-
+```
 
 
 ## 📸 Screenshots
-
+```
 +----------------------------------------------------------+
 [ /home/user/projects                                      ] [CLIPBOARD: 2 items (COPY)]
 +----------------------------------------------------------+
@@ -74,44 +74,39 @@ Enter/Space    Select option
 +----------------------------------------------------------+
 | ENTER:Open | c:Copy | m:Move | p:Paste | R:Del | ESC:Menu |
 +----------------------------------------------------------+
-
+```
 
 
 ## 🚀 Installation
 
-### Dependencies
+## Debian/Ubuntu
+```sudo apt install libncurses5-dev```
 
-bash
-# Debian/Ubuntu
-sudo apt install libncurses5-dev
+## Fedora/RHEL
+```sudo dnf install ncurses-devel```
 
-# Fedora/RHEL
-sudo dnf install ncurses-devel
+## Arch Linux
+```sudo pacman -S ncurses```
 
-# Arch Linux
-sudo pacman -S ncurses
+# Build & Install
 
-Build & Install
-bash
+## Clone repository
+```git clone https://github.com/JamesAnanenkovic/Dirman-linux-.git```
+```cd Dirman-linux-```
 
+## Compile
+```gcc -o dirmanlinux dirmanlinux.c -lncurses```
 
-# Clone repository
-git clone https://github.com/JamesAnanenkovic/Dirman-linux-.git
-cd Dirman-linux-
-
-# Compile
-gcc -o dirmanlinux dirmanlinux.c -lncurses
-
-# Install system-wide (optional)
-sudo cp dirmanlinux /usr/bin/
+## Install system-wide (optional)
+```sudo cp dirmanlinux /usr/bin/```
 
 # Run
-dirmanlinux
+```dirmanlinux```
 
 🎨 Color Schemes
+```
 Press ESC → select theme:
 Table
-
 Theme	Style	Best For
 Default	White/Cyan	General use
 Ocean	Blue tones	Cool atmosphere
@@ -121,21 +116,22 @@ Matrix	Green on black	Hackerman mode
 Mono	Grayscale	Minimalists
 Gold	Yellow tones	Luxury feel
 Purple	Magenta tones	Creative minds
+```
 ⚡ Performance
 
-    Zero dependencies except ncurses
-    Single binary - < 50KB compiled
-    Instant startup - No loading time
-    Efficient copying - Uses sendfile() for speed
-    Low memory - Handles thousands of files
+   - Zero dependencies except ncurses
+   - Single binary - < 50KB compiled
+   - Instant startup - No loading time
+   - Efficient copying - Uses sendfile() for speed
+   - Low memory - Handles thousands of files
 
 🛡️ Safety Features
 
-    Confirmation dialogs for destructive operations
-    Visual distinction between files and folders
-    Clipboard persistence until paste or clear
-    Cannot paste into same location (prevents duplicates)
-    Overwrite confirmation with file details
+   - Confirmation dialogs for destructive operations
+   - Visual distinction between files and folders
+   - Clipboard persistence until paste or clear
+   - Cannot paste into same location (prevents duplicates)
+   - Overwrite confirmation with file details
 
 📝 Changelog
 v3.0 (Current)
