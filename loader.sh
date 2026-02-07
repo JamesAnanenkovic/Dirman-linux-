@@ -1,5 +1,5 @@
 echo "Dirman is loading..."
-gcc -o dirmanlinux dirmanlinux.c -lncurses
+gcc -o drmngr dirmanlinux.c -lncurses
 echo "Compiled sucsesfully!"
-sudo cp dirmanlinux /usr/bin/
+sudo cp drmngr /usr/bin/
 echo "Dirman is ready!"
