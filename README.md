@@ -1,4 +1,4 @@
-# Dirman-linux v3 🚀
+# Drmngr v3 🚀
 
 **Lightweight Terminal File Manager for Linux**
 
@@ -95,13 +95,13 @@ Enter/Space    Select option
 ```cd Dirman-linux-```
 
 ## Compile
-```gcc -o dirmanlinux dirmanlinux.c -lncurses```
+```gcc -o drmngr dirmanlinux.c -lncurses```
 
 ## Install system-wide (optional)
-```sudo cp dirmanlinux /usr/bin/```
+```sudo cp drmngr /usr/bin/```
 
 # Run
-```dirmanlinux```
+```drmngr```
 
 🎨 Color Schemes
 ```
