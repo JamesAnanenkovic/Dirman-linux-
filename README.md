@@ -1,4 +1,4 @@
-# Dirman-linux v4 🚀
+# Drmngr v4 🚀
 
 **Advanced Terminal File Manager for Linux**
 
