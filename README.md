@@ -1,173 +1,148 @@
-# Drmngr v3 🚀
+# Dirman-linux v4 🚀
 
-**Lightweight Terminal File Manager for Linux**
+**Advanced Terminal File Manager for Linux**
 
-A fast, keyboard-driven file manager with a beautiful TUI (Terminal User Interface) built with ncurses. No mouse needed - pure efficiency!
+[![Version](https://img.shields.io/badge/version-4.0-blue)](https://github.com/JamesAnanenkovic/Dirman-linux-)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Linux-orange)](https://github.com/JamesAnanenkovic/Dirman-linux-)
 
+A fast, keyboard-driven file manager with beautiful TUI. Handles 100k+ files with pagination, multi-selection, and batch operations.
 
 ## ✨ Features
 
-### Core Navigation
-- **Keyboard-only control** - Navigate faster than GUI file managers
-- **Vim-style bindings** - `j/k` or arrow keys for movement
-- **Quick directory jumping** - `Enter` to enter, `-` to go up
-- **Visual file tree** - ASCII box drawing with color themes
-
-### File Operations
-| Key | Action | Details |
-|-----|--------|---------|
-| `c` | **Copy** | Add file/folder to clipboard |
-| `m` | **Move** | Cut file/folder for relocation |
-| `p` | **Paste** | Execute copy/move operations |
-| `r` | **Delete** | Remove with confirmation dialog |
-| `n` | **New File** | Create empty file |
-| `N` | **New Folder** | Create new directory |
-
-### Advanced Features
-- **Multi-clipboard** - Copy up to 10 items at once
-- **Batch operations** - Paste multiple files simultaneously
-- **Human-readable sizes** - See `4.2K`, `1.5G`, `156B` instantly
-- **Visual clipboard indicator** - `*` marks selected items
-- **Recursive copy** - Folders copied with full contents
-- **Safe operations** - Confirmations for delete/overwrite
-
-### Customization
-- **8 Color Schemes**: Default, Ocean, Forest, Sunset, Matrix, Mono, Gold, Purple
-- **Toggle colors** - Disable for monochrome terminals
-- **Real-time preview** - See changes instantly in settings menu
+| Feature | Description |
+|---------|-------------|
+| **Multi-Select** | Space toggle, Ctrl+A all, Ctrl+U clear |
+| **Batch Operations** | Copy/Move/Delete multiple files at once |
+| **Live Filter** | `/` to search, instant results |
+| **Pagination** | 100 items/page, smooth 100k+ handling |
+| **BIOS-Style Menu** | Tabbed settings with color preview |
+| **Progress Indicators** | Real-time clipboard/selection/file counts |
+| **Safe & Fast** | Error handling, sendfile() for speed |
 
 ## 🎮 Controls
-```
-Navigation:
-↑/↓ or j/k     Move selection
-Enter          Open directory
 
-             Go to parent directory
+### Navigation
+| Key | Action |
+|-----|--------|
+| `↑↓` or `jk` | Move cursor |
+| `Enter` or `l` | Open directory |
+| `-` or `h` | Parent directory |
+| `g` / `G` | Go to top/bottom |
+| `PgUp` / `PgDn` | Previous/next page |
 
-q              Quit
-File Operations:
-c              Copy to clipboard
-m              Cut (move) to clipboard
-p              Paste clipboard contents
-r              Delete (with confirmation)
-n              Create new file
-N              Create new directory
-System:
-ESC            Open settings menu
-Arrow Keys     Navigate menus
-Enter/Space    Select option
-```
+### File Operations
+| Key | Action |
+|-----|--------|
+| `Space` | Select/deselect item |
+| `Ctrl+A` | Select all visible |
+| `Ctrl+U` | Clear selection |
+| `c` | Copy to clipboard |
+| `m` | Cut (move) to clipboard |
+| `p` | Paste clipboard |
+| `r` | Delete (with confirmation) |
+| `n` | New file |
+| `N` | New folder |
+| `/` | Filter mode |
 
+### System
+| Key | Action |
+|-----|--------|
+| `ESC` | Settings menu |
+| `q` | Quit |
 
-## 📸 Screenshots
-```
-+----------------------------------------------------------+
-[ /home/user/projects                                      ] [CLIPBOARD: 2 items (COPY)]
-+----------------------------------------------------------+
-|  [DIR] ..                                          4.0K  |
-|  [DIR] src                                        12.3M  |
-| *[DIR] assets                                      1.5G  |
-| *[FIL] README.md                                   4.2K  |
-|  [FIL] main.c                                      156B  |
-|  [DIR] tests                                       8.9M  |
-|  [FIL] Makefile                                     2.1K  |
-+----------------------------------------------------------+
-| ENTER:Open | c:Copy | m:Move | p:Paste | R:Del | ESC:Menu |
-+----------------------------------------------------------+
-```
+## 🚀 Quick Start
 
-
-## 🚀 Installation
-
-## Debian/Ubuntu
-```sudo apt install libncurses5-dev```
-
-## Fedora/RHEL
-```sudo dnf install ncurses-devel```
-
-## Arch Linux
-```sudo pacman -S ncurses```
+# Clone
+git clone https://github.com/JamesAnanenkovic/Dirman-linux-.git
+cd Dirman-linux-
 
 # Build & Install
+chmod +x load.sh
+./load.sh install
 
-## Clone repository
-```git clone https://github.com/JamesAnanenkovic/Dirman-linux-.git```
-```cd Dirman-linux-```
+# Or just build locally
+./load.sh
+./drmngr
 
-## Compile
-```gcc -o drmngr dirmanlinux.c -lncurses```
+📦 Dependencies
+# Debian/Ubuntu
+sudo apt install libncurses5-dev
 
-## Install system-wide (optional)
-```sudo cp drmngr /usr/bin/```
+# Fedora/RHEL
+sudo dnf install ncurses-devel
 
-# Run
-```drmngr```
+# Arch Linux
+sudo pacman -S ncurses
 
-🎨 Color Schemes
+🎨 Color Themes
+Press ESC → Colors tab, select with arrow keys:
+| Theme   | Style          |
+| ------- | -------------- |
+| Default | White/Cyan     |
+| Ocean   | Blue tones     |
+| Forest  | Green tones    |
+| Sunset  | Red/Yellow     |
+| Matrix  | Green terminal |
+| Mono    | Grayscale      |
+| Gold    | Yellow         |
+| Purple  | Magenta        |
+
+
+📁 Build Options
+./load.sh          # Local build only
+./load.sh install  # Build + system install
+./load.sh clean    # Remove build files
+./load.sh uninstall # Remove from system
+
+Manual build:
+gcc -o drmngr dirmanlinux.c -lncurses -O2
+sudo cp drmngr /usr/bin/
+
+🖥️ Interface
 ```
-Press ESC → select theme:
-Table
-Theme	Style	Best For
-Default	White/Cyan	General use
-Ocean	Blue tones	Cool atmosphere
-Forest	Green tones	Nature lovers
-Sunset	Red/Yellow	Warm vibe
-Matrix	Green on black	Hackerman mode
-Mono	Grayscale	Minimalists
-Gold	Yellow tones	Luxury feel
-Purple	Magenta tones	Creative minds
++----------------------------------------------------------+
+[ /home/user/projects                               ] [42 files]
+[CLIP:3 CP] [SEL:5]                          [Page 1/3] [/filter]
++----------------------------------------------------------+
+| >> [DIR] src                                      12.3M  |
+| *  [DIR] assets                                   1.5G   |
+| *  [FIL] README.md                                4.2K   |
+|    [FIL] main.c                                   156B   |
+|    [DIR] tests                                    8.9M   |
++----------------------------------------------------------+
+| c:Copy m:Move p:Paste r:Del n:NewF N:NewD Space:Sel A:All|
++----------------------------------------------------------+
 ```
-⚡ Performance
-
-   - Zero dependencies except ncurses
-   - Single binary - < 50KB compiled
-   - Instant startup - No loading time
-   - Efficient copying - Uses sendfile() for speed
-   - Low memory - Handles thousands of files
-
-🛡️ Safety Features
-
-   - Confirmation dialogs for destructive operations
-   - Visual distinction between files and folders
-   - Clipboard persistence until paste or clear
-   - Cannot paste into same location (prevents duplicates)
-   - Overwrite confirmation with file details
-
 📝 Changelog
-v3.0 (Current)
+v4.0 (Current)
 
-    ✅ Multi-item clipboard (copy/cut/paste)
-    ✅ Human-readable file sizes
-    ✅ Recursive directory copying
-    ✅ 8 color schemes
-    ✅ Batch operations
-    ✅ Visual clipboard indicators
+    ✅ Multi-selection system (Space/Ctrl+A/Ctrl+U)
+    ✅ Batch copy/move/delete operations
+    ✅ Live filter with /
+    ✅ Pagination (100 items/page)
+    ✅ BIOS-style tabbed settings menu
+    ✅ 8 color themes with preview
+    ✅ Error handling & memory safety
+    ✅ Progress indicators
 
-v2.0
+v3.0
 
-    ✅ Settings menu (ESC)
-    ✅ Color customization
-    ✅ New file/folder creation
-    ✅ Delete with confirmation
-
-v1.0
-
-    ✅ Basic navigation
-    ✅ Directory listing
-    ✅ ASCII UI
+    Basic file operations
+    Single clipboard
+    ASCII UI
 
 🤝 Contributing
-Pull requests welcome! Areas for improvement:
+PRs welcome! Roadmap:
 
-    [ ] Search functionality (/)
-    [ ] File preview (text files)
-    [ ] Permissions editing
-    [ ] Symlink handling
-    [ ] Bookmarks/favorites
+    [ ] File preview (text/images)
+    [ ] Search in file contents
+    [ ] Favorites/bookmarks
+    [ ] Permission editor
+    [ ] Split pane view
 
 📄 License
-MIT License - See LICENSE for details.
+MIT License - see LICENSE
 🙏 Credits
-Built with passion and ncurses. Inspired by ranger, mc, and vim.
-
-## Pro Tip: Add alias fm='dirmanlinux' to your .bashrc for quick access!
+Built with ncurses and passion. Inspired by ranger, mc, vim.
+Pro tip: Add alias fm='drmngr' to your .bashrc!
